@@ -10,7 +10,7 @@ public class StringExercises {
         String drive = "In windows, the main drive is usually C:\\";
         System.out.println(drive);
 
-        String slash = "I can do backslashes \\, double backslashes \\\\, and the amazing triple backslash \\\\\\!";
+        String slash = "I can do backslashes \\, double backslashes \\\\,\n and the amazing triple backslash \\\\\\!";
         System.out.println(slash);
     }
 }
