@@ -81,6 +81,27 @@ public class MethodsExercises {
         }
     }
 
+    public static int getRandomNumber(int min, int max) {
+        return(int) ((Math.random() * (max - min)) + min);
+    }
+
+    public static void diceRoll() {
+        Scanner roll = new Scanner(System.in);
+        System.out.println("How many sides for your dice?");
+        int numOfSides = getInteger(4,20);
+
+        int firstRoll = getRandomNumber(1, numOfSides);
+        int secondRoll = getRandomNumber(1, numOfSides);
+
+        System.out.printf("first Die ==> %d\nsecond Die ==>%d\n", firstRoll, secondRoll);
+        System.out.println("Would you like to roll again?");
+        String usrResponse = roll.nextLine();
+        boolean userContinue = usrResponse.toLowerCase().contains("y");
+        if(userContinue) {
+            diceRoll();
+        }
+    }
+
 
 
     public static void main(String[] args) {
@@ -93,8 +114,10 @@ public class MethodsExercises {
 
         //System.out.println(getInteger(1, 10));
 
-        Factorial();
+        //Factorial();
         //System.out.println(FactorialString(4));
         //System.out.println(FactorialSum(4));
+
+        diceRoll();
     }
 }
