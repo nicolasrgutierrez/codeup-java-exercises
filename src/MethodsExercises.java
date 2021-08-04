@@ -46,18 +46,55 @@ public class MethodsExercises {
         //return userInput;
     }
 
+    public static String FactorialString(int num) {
 
+        String stringReturn = "";
+
+        for (int i = 1; i <= num; i++) {
+
+            if (i == num) {
+                stringReturn += i;
+            } else {
+
+                stringReturn += i + " x ";
+
+            }
+        }
+        return stringReturn;
+    }
+
+    public static int FactorialSum(int num) {
+        int sum = 1;
+        for(int i = 2; i <= num; i++) {
+            sum *= i;
+        }
+        return sum;
+    }
+    public static void Factorial() {
+        int factNum = getInteger(1,10);
+
+        for(int i = 1; i <= factNum; i++) {
+
+            System.out.println(i + "! = "+ FactorialString(i) +" = " + FactorialSum(i));
+            // Shorthand for printout
+            // System.out.println("%d! = %s = %d\n", i, FactorialString(i), FactorialSum(i))
+        }
+    }
 
 
 
     public static void main(String[] args) {
 
-        System.out.println(Addition(55,62));
-        System.out.println(Subtraction(10,5));
-        System.out.println(Multiplication(7, 49));
-        System.out.println(Division(77, 7));
-        System.out.println(Modulus(45, 5));
+        //System.out.println(Addition(55,62));
+        //System.out.println(Subtraction(10,5));
+        //System.out.println(Multiplication(7, 49));
+        //System.out.println(Division(77, 7));
+        //System.out.println(Modulus(45, 5));
 
-        System.out.println(getInteger(5, 25));
+        //System.out.println(getInteger(1, 10));
+
+        Factorial();
+        //System.out.println(FactorialString(4));
+        //System.out.println(FactorialSum(4));
     }
 }
