@@ -29,7 +29,9 @@ public class Input {
     }
 
     public int getInt() {
-        return this.scanner.nextInt();
+        System.out.println("Give me an integer: ");
+        int userInt = scanner.nextInt();
+        return userInt;
     }
 
     public double getDouble(double min, double max) {
@@ -44,6 +46,8 @@ public class Input {
     }
 
     public double getDouble() {
-        return this.scanner.nextDouble();
+        System.out.println("Give me an decimal: ");
+        double userDouble = scanner.nextDouble();
+        return userDouble;
     }
 }

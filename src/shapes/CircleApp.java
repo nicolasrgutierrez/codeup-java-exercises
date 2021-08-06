@@ -15,5 +15,6 @@ public class CircleApp {
 
         System.out.printf("The area of your circle equals %f%n and the circumference of your circle equals %f%n", circleArea, circleCircumference);
 
+
     }
 }
