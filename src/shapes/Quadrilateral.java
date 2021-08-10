@@ -18,10 +18,10 @@ public abstract class Quadrilateral extends Shape implements Measurable {
     }
 
     public void setLength(double length) {
-        this.length = length;
+
     }
 
     public void setWidth(double width) {
-        this.width = width;
+
     }
 }
