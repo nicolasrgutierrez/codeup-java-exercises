@@ -12,6 +12,6 @@ public class ServerNameGenerator {
         return input[randomTwo];
     }
     public static void main(String[] args) {
-        System.out.println(randomElement(adjectives) + "-" + randomElement(nouns));
+        System.out.println("Here is your randomized D&D class for your next campaign: \n" + randomElement(adjectives) + "-" + randomElement(nouns));
     }
 }

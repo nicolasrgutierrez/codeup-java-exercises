@@ -18,7 +18,7 @@ public class ArraysExercises {
         }
 
         people = addPerson(people, new Person("Iida"));
-
+        //Enhanced for loop is READ ONLY and has no access to index
         for(Person person : people) {
             System.out.println(person.getName());
         }
