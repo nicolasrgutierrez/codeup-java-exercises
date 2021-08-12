@@ -34,6 +34,7 @@ public class GradesApplication {
 
         for (String key : students.keySet()) {
             System.out.printf("|%s| ", key);
+
         }
 
     }

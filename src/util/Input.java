@@ -3,6 +3,7 @@ package util;
 import java.util.Scanner;
 
 public class Input {
+
     private Scanner scanner;
 
     public Input() {
@@ -10,44 +11,75 @@ public class Input {
     }
 
     public String getString() {
-        return this.scanner.nextLine();
+//        System.out.println("Type Something: ");
+        String userString = scanner.nextLine();
+        return userString;
     }
 
     public boolean yesNo() {
-        return getString().toLowerCase().contains("y");
+//        System.out.println("Select (y/n):");
+        String userAnswer = scanner.next();
+        scanner.nextLine();
+        return userAnswer.equals("y");
     }
 
     public int getInt(int min, int max) {
-        int userInt = this.getInt();
-
-        if (userInt < min || userInt > max) {
-            System.out.println("Sorry, that's not within the range.");
+        String s = getString();
+        try{
+            Integer.valueOf(s);
+        } catch(NumberFormatException e){
+            System.out.println("Error: Input is not an integer!");
             return getInt(min, max);
-        } else {
-            return userInt;
+        }
+
+        int number = Integer.parseInt(s);
+        if(number >= min && number <= max){
+            return number;
+        }
+        else{
+            System.out.println("Error: Choice Not Recognized!");
+            return getInt(min, max);
         }
     }
 
     public int getInt() {
-        System.out.println("Give me an integer: ");
-        int userInt = scanner.nextInt();
-        return userInt;
+        String s = getString();
+        try{
+            return Integer.valueOf(s);
+        } catch (NumberFormatException e){
+            System.out.println("Error: Input is not an integer!");
+            return getInt();
+        }
     }
 
     public double getDouble(double min, double max) {
-        double userDouble = this.getDouble();
-
-        if (userDouble < min || userDouble > max) {
-            System.out.println("That doesn't seem to work here.");
+        String s = getString();
+        try{
+            Double.valueOf(s);
+        } catch(NumberFormatException e){
+            System.out.println("Error: Input is not a double!");
             return getDouble(min, max);
-        } else {
-            return userDouble;
+        }
+
+        double number = Double.parseDouble(s);
+        if(number >= min && number <= max){
+            return number;
+        }
+        else{
+            System.out.println("Error: Number not in range");
+            return getDouble(min, max);
         }
     }
 
     public double getDouble() {
-        System.out.println("Give me an decimal: ");
-        double userDouble = scanner.nextDouble();
-        return userDouble;
+        String s = getString();
+        try{
+            return Double.valueOf(s);
+        } catch(NumberFormatException e){
+            System.out.println("Error: Input is not a double!");
+            return getDouble();
+        }
     }
+
+
 }
