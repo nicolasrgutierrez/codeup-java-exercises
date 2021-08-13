@@ -24,15 +24,17 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
-        String s = getString();
+
+        String string = getString();
+
         try{
-            Integer.valueOf(s);
+            Integer.valueOf(string);
         } catch(NumberFormatException e){
             System.out.println("Error: Input is not an integer!");
             return getInt(min, max);
         }
 
-        int number = Integer.parseInt(s);
+        int number = Integer.parseInt(string);
         if(number >= min && number <= max){
             return number;
         }
@@ -43,9 +45,11 @@ public class Input {
     }
 
     public int getInt() {
-        String s = getString();
+
+        String string = getString();
+
         try{
-            return Integer.valueOf(s);
+            return Integer.valueOf(string);
         } catch (NumberFormatException e){
             System.out.println("Error: Input is not an integer!");
             return getInt();
@@ -53,15 +57,15 @@ public class Input {
     }
 
     public double getDouble(double min, double max) {
-        String s = getString();
+        String string = getString();
         try{
-            Double.valueOf(s);
+            Double.valueOf(string);
         } catch(NumberFormatException e){
             System.out.println("Error: Input is not a double!");
             return getDouble(min, max);
         }
 
-        double number = Double.parseDouble(s);
+        double number = Double.parseDouble(string);
         if(number >= min && number <= max){
             return number;
         }
@@ -72,14 +76,32 @@ public class Input {
     }
 
     public double getDouble() {
-        String s = getString();
+        String string = getString();
         try{
-            return Double.valueOf(s);
+            return Double.valueOf(string);
         } catch(NumberFormatException e){
             System.out.println("Error: Input is not a double!");
             return getDouble();
         }
     }
 
+    public int getBinary() {
+        System.out.println("Enter a binary number: ");
+        try{
+            return Integer.valueOf(this.getString(), 2);
+        } catch (NumberFormatException e) {
+            System.out.println("That is not a binary number!");
+            return getBinary();
+        }
+    }
 
+    public int getHex() {
+        System.out.println("Enter a hexadecimal number: ");
+        try{
+            return Integer.valueOf(this.getString(), 16);
+        }catch (NumberFormatException e) {
+            System.out.println("That is not a hexadecimal number!");
+            return getHex();
+        }
+    }
 }
